@@ -105,13 +105,13 @@ function displayError(errMsg) {
     $("#results").html(errorMsgTmpl(errMsg));
     $("#loading").toggleClass("hidden");
   }
+  
 //displays states
 function stateDisplay() {
     let states = Object.keys(STATES).map((key) => {
         let id = STATES[key].replace(/\s/, "");
         return ` 
         <div class="state-item"> 
-            
             <input type="checkbox" id="${id}" name="${id}" value="${key}">
             <label for='${id}'> ${STATES[key]} </label>
         </div>
@@ -162,7 +162,7 @@ function errorMsgTmpl(msg) {
 function watchForm() {
     $('.np-form').submit(function(e){
         e.preventDefault();
-        const searchTerm = $('#search-park').val();
+        const searchTerm = $('#js-searchterm').val();
         const maxResults = $('#maxresults').val();
         const checkeditem = $('#statelist').find("input[type='checkbox']:checked");
 
