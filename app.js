@@ -85,6 +85,7 @@ fetch(url)
     }
     displayResults(responseJson)
 })
+
 .catch((err) => {
     console.log(err.message);
     displayError("Please refine your query.");
@@ -96,7 +97,8 @@ function displayStates() {
     $('#statelist').html(stateDisplay());
 }
 // all stuff that displays on html 
-function displayResults(){
+function displayResults(res){
+    // console.log(res)
     $('#results').html(resultsFromApi(res));
     $('#loading').toggleClass('hidden');
 }
@@ -127,6 +129,7 @@ function stateDisplay() {
 } 
 
 function resultsFromApi(res){
+    console.log(res)
     let results = res.data.map((item) => {
         let address = item.addresses.find((obj) => obj.type === "Physical");
         return `
