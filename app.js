@@ -129,7 +129,7 @@ function stateDisplay() {
 } 
 
 function resultsFromApi(res){
-    console.log(res)
+    //console.log(res)
     let results = res.data.map((item) => {
         let address = item.addresses.find((obj) => obj.type === "Physical");
         return `
