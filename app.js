@@ -1,3 +1,5 @@
+'use strict';
+
 const STATES = {
     AL: "Alabama",
     AK: "Alaska",
@@ -99,6 +101,7 @@ function displayStates() {
 // all stuff that displays on html 
 function displayResults(res){
     // console.log(res)
+    $('#results').html('');
     $('#results').html(resultsFromApi(res));
     $('#loading').toggleClass('hidden');
 }
